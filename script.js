@@ -6,11 +6,11 @@ const playButton = document.querySelector('.play-button');
 
 // Frases por botón (ajustar frases si es necesario)
 const phrases = {
-    '1': ['Frase 11A', 'Frase 1B', 'Frase 1C', 'Frase 1D'],
-    '2': ['Frase 22A', 'Frase 2B', 'Frase 2C', 'Frase 2D'],
+    '1': ['Slap', 'Kiss', 'Shot', 'Selfie'],
+    '2': ['Slap', 'Kiss', 'Shot', 'Selfie'],
     '3': ['Slap', 'Kiss', 'Shot', 'Selfie'],
     '4': ['Slap', 'Kiss', 'Shot', 'Selfie'],
-    '5': ['Frase 5A', 'Frase 5B', 'Frase 5C', 'Frase 5D']
+    '5': ['Slap', 'Kiss', 'Shot', 'Selfie']
 };
 
 // Manejar clic en botones
