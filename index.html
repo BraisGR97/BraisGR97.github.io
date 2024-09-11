@@ -5,99 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drink Team</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
-    <div class="header">
-        <h1 class="comic-title">Drink Team</h1>
-        <h2 class="comic-subtitle">LOTTERY</h2>
-    </div>
-    <div class="button-container">
-        <button class="square-button" data-value="1">1</button>
-        <button class="square-button" data-value="2">2</button>
-        <button class="square-button selected" data-value="3">3</button>
-        <button class="square-button" data-value="4">4</button>
-        <button class="square-button" data-value="5">5</button>
-    </div>
-
-    <!-- Contenido asociado a cada botón -->
-    <div class="content-container">
-        <!-- Lista y pantalla para el botón 1 -->
-        <div class="content" data-button="1">
-            <div class="list-container">
-                <ul class="item-list">
-                    <li>Slap</li>
-                    <li>Kiss</li>
-                    <li>Shot</li>
-                    <li>Selfie</li>
-                </ul>
-            </div>
-            <div class="display-container">
-                <p class="display-text">Quieres Probar Suerte?</p>
-            </div>
+    <div class="background-image" id="backgroundImage">
+        <div class="header">
+            <div class="comic-title">Drink Team</div>
+            <div class="comic-subtitle">LOTTERY</div>
         </div>
-
-        <!-- Lista y pantalla para el botón 2 -->
-        <div class="content" data-button="2">
-            <div class="list-container">
-                <ul class="item-list">
-                    <li>Slap</li>
-                    <li>Kiss</li>
-                    <li>Shot</li>
-                    <li>Selfie</li>
-                </ul>
-            </div>
-            <div class="display-container">
-                <p class="display-text">Quieres Probar Suerte?</p>
-            </div>
+        <div class="button-container">
+            <button class="square-button" data-image="imagen1.jpg" data-list="list1">1</button>
+            <button class="square-button" data-image="2.png" data-list="list2">2</button>
+            <button class="square-button" data-image="1.png" data-list="list3">3</button>
+            <button class="square-button" data-image="imagen4.jpg" data-list="list4">4</button>
+            <button class="square-button" data-image="imagen5.jpg" data-list="list5">5</button>
         </div>
-
-        <!-- Lista y pantalla para el botón 3 -->
-        <div class="content" data-button="3">
-            <div class="list-container">
-                <ul class="item-list">
-                    <li>Slap</li>
-                    <li>Kiss</li>
-                    <li>Shot</li>
-                    <li>Selfie</li>
-                </ul>
-            </div>
-            <div class="display-container">
-                <p class="display-text">Quieres Probar Suerte?</p>
-            </div>
+        <div id="list1" class="list">
+            <ul>
+                <li>Texto 1A</li>
+                <li>Texto 1B</li>
+                <li>Texto 1C</li>
+                <li>Texto 1D</li>
+            </ul>
         </div>
-
-        <!-- Lista y pantalla para el botón 4 -->
-        <div class="content" data-button="4">
-            <div class="list-container">
-                <ul class="item-list">
-                    <li>Slap</li>
-                    <li>Kiss</li>
-                    <li>Shot</li>
-                    <li>Selfie</li>
-                </ul>
-            </div>
-            <div class="display-container">
-                <p class="display-text">Quieres Probar Suerte?</p>
-            </div>
+        <div id="list2" class="list">
+            <ul>
+                <li>Texto 2A</li>
+                <li>Texto 2B</li>
+                <li>Texto 2C</li>
+                <li>Texto 2D</li>
+            </ul>
         </div>
-
-        <!-- Lista y pantalla para el botón 5 -->
-        <div class="content" data-button="5">
-            <div class="list-container">
-                <ul class="item-list">
-                    <li>Slap</li>
-                    <li>Kiss</li>
-                    <li>Shot</li>
-                    <li>Selfie</li>
-                </ul>
-            </div>
-            <div class="display-container">
-                <p class="display-text">Quieres Probar Suerte?</p>
-            </div>
+        <div id="list3" class="list">
+            <ul>
+                <li>Texto 3A</li>
+                <li>Texto 3B</li>
+                <li>Texto 3C</li>
+                <li>Texto 3D</li>
+            </ul>
+        </div>
+        <div id="list4" class="list">
+            <ul>
+                <li>Texto 4A</li>
+                <li>Texto 4B</li>
+                <li>Texto 4C</li>
+                <li>Texto 4D</li>
+            </ul>
+        </div>
+        <div id="list5" class="list">
+            <ul>
+                <li>Texto 5A</li>
+                <li>Texto 5B</li>
+                <li>Texto 5C</li>
+                <li>Texto 5D</li>
+            </ul>
         </div>
     </div>
-
-    <button class="play-button">Play</button>
-    <script src="script.js"></script>
 </body>
 </html>
