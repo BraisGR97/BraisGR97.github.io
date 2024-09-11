@@ -1,0 +1,120 @@
+body {
+    background-color: #000; /* Fondo negro de respaldo */
+    background-image: url('fondo.png'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* La imagen cubre todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* No repite la imagen */
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive; /* Estilo cómic para todo */
+}
+
+.header {
+    text-align: center;
+    padding: 20px 0; /* Espacio superior e inferior */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejorar la visibilidad del texto */
+}
+
+.comic-title {
+    color: white; /* Letras blancas */
+    font-size: 80px; /* Tamaño grande */
+    margin: 0; /* Sin márgenes adicionales */
+}
+
+.comic-subtitle {
+    color: #FF00FF; /* Letras rosa fucsia */
+    font-size: 40px; /* Tamaño más pequeño que el título */
+    margin: 0; /* Sin márgenes adicionales */
+}
+
+.button-container {
+    display: flex; /* Flexbox para alinear los botones en fila */
+    justify-content: center; /* Centrar los botones horizontalmente */
+    margin-top: 20px; /* Espacio entre los botones y el subtítulo */
+}
+
+.square-button {
+    background-color: #fff; /* Fondo blanco */
+    color: #000; /* Texto negro */
+    border: 2px solid #000; /* Borde negro */
+    width: 60px; /* Ancho del botón */
+    height: 60px; /* Altura del botón */
+    margin: 0 10px; /* Espacio entre botones */
+    font-size: 20px; /* Tamaño del número */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive; /* Estilo cómic */
+    transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+}
+
+.square-button.selected {
+    background-color: #FF00FF; /* Fondo rosa fucsia cuando está seleccionado */
+    color: #fff; /* Texto blanco cuando está seleccionado */
+}
+
+.square-button:hover {
+    background-color: #FF00FF; /* Fondo rosa fucsia al pasar el ratón */
+    color: #fff; /* Texto blanco al pasar el ratón */
+}
+
+.content-container {
+    text-align: center; /* Centra el contenido de la lista */
+    margin: 20px 0; /* Espacio superior e inferior */
+}
+
+.content {
+    display: none; /* Oculta por defecto todos los contenidos */
+}
+
+.content.active {
+    display: block; /* Muestra el contenido activo */
+}
+
+.list-container {
+    text-align: center; /* Centra el contenido de la lista */
+    margin: 20px 0; /* Espacio superior e inferior */
+}
+
+.item-list {
+    list-style-type: decimal; /* Numeración para la lista */
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margin */
+    font-size: 18px; /* Tamaño de fuente de la lista */
+    color: white; /* Color del texto de la lista */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente para mejorar la legibilidad */
+    border-radius: 10px; /* Bordes redondeados */
+    display: inline-block; /* Mantiene la lista en un tamaño adecuado */
+    padding: 10px; /* Espacio interno */
+}
+
+.display-container {
+    text-align: center; /* Centra el texto en la pantalla */
+    margin: 20px 0; /* Espacio superior e inferior */
+}
+
+.display-text {
+    font-size: 100px; /* Tamaño grande para el texto */
+    color: white; /* Texto blanco */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente para el área de texto */
+    border: 2px solid #FF00FF; /* Borde rosa fucsia */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espacio interno */
+    display: inline-block; /* Mantiene el área de texto en un tamaño adecuado */
+}
+
+.play-button {
+    display: block;
+    margin: 20px auto;
+    padding: 50px 100px;
+    font-size: 38px;
+    cursor: pointer;
+    background-color: #FF00FF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.play-button:hover {
+    background-color: #FF69B4; /* Rosa más claro al pasar el ratón */
+}
