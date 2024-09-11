@@ -6,7 +6,7 @@ const playButton = document.querySelector('.play-button');
 
 // Frases por botón (ajustar frases si es necesario)
 const phrases = {
-    '1': ['Frase 1A', 'Frase 1B', 'Frase 1C', 'Frase 1D'],
+    '1': ['Frase 11A', 'Frase 1B', 'Frase 1C', 'Frase 1D'],
     '2': ['Frase 2A', 'Frase 2B', 'Frase 2C', 'Frase 2D'],
     '3': ['Frase 3A', 'Frase 3B', 'Frase 3C', 'Frase 3D'],
     '4': ['Frase 4A', 'Frase 4B', 'Frase 4C', 'Frase 4D'],
