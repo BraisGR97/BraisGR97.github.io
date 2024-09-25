@@ -5,61 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drink Team</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
 </head>
 <body>
-    <div class="background-image" id="backgroundImage">
-        <div class="header">
-            <div class="comic-title">Drink Team</div>
-            <div class="comic-subtitle">LOTTERY</div>
-        </div>
+    <div class="content">
+        <h1 class="title">Drink Team</h1>
+        <h2 class="subtitle">Roulette</h2>
         <div class="button-container">
-            <button class="square-button" data-image="image/2.png" data-list="list1">1</button>
-            <button class="square-button" data-image="image/2.png" data-list="list2">2</button>
-            <button class="square-button" data-image="image/1.png" data-list="list3">3</button>
-            <button class="square-button" data-image="image/2.png" data-list="list4">4</button>
-            <button class="square-button" data-image="image/2.png" data-list="list5">5</button>
+            <button class="number-button" onclick="showList(1)">1</button>
+            <button class="number-button" onclick="showList(2)">2</button>
+            <button class="number-button" onclick="showList(3)">3</button>
+            <button class="number-button" onclick="showList(4)">4</button>
+            <button class="number-button" onclick="showList(5)">5</button>
         </div>
-        <div id="list1" class="list">
-            <ul>
-                <li>Texto 1A</li>
-                <li>Texto 1B</li>
-                <li>Texto 1C</li>
-                <li>Texto 1D</li>
-            </ul>
+
+        <!-- Listas de frases -->
+        <div id="list1" class="phrase-list">
+            <div class="background-box"></div>
+            <span>Frase 1A</span><br>
+            <span>Frase 1B</span><br>
+            <span>Frase 1C</span><br>
+            <span>Frase 1D</span>
         </div>
-        <div id="list2" class="list">
-            <ul>
-                <li>Texto 2A</li>
-                <li>Texto 2B</li>
-                <li>Texto 2C</li>
-                <li>Texto 2D</li>
-            </ul>
+        <div id="list2" class="phrase-list">
+            <div class="background-box"></div>
+            <span>Frase 2A</span><br>
+            <span>Frase 2B</span><br>
+            <span>Frase 2C</span><br>
+            <span>Frase 2D</span>
         </div>
-        <div id="list3" class="list">
-            <ul>
-                <li>Texto 3A</li>
-                <li>Texto 3B</li>
-                <li>Texto 3C</li>
-                <li>Texto 3D</li>
-            </ul>
+        <div id="list3" class="phrase-list">
+            <div class="background-box"></div>
+            <span>Frase 3A</span><br>
+            <span>Frase 3B</span><br>
+            <span>Frase 3C</span><br>
+            <span>Frase 3D</span>
         </div>
-        <div id="list4" class="list">
-            <ul>
-                <li>Texto 4A</li>
-                <li>Texto 4B</li>
-                <li>Texto 4C</li>
-                <li>Texto 4D</li>
-            </ul>
+        <div id="list4" class="phrase-list">
+            <div class="background-box"></div>
+            <span>Frase 4A</span><br>
+            <span>Frase 4B</span><br>
+            <span>Frase 4C</span><br>
+            <span>Frase 4D</span>
         </div>
-        <div id="list5" class="list">
-            <ul>
-                <li>Texto 5A</li>
-                <li>Texto 5B</li>
-                <li>Texto 5C</li>
-                <li>Texto 5D</li>
-            </ul>
+        <div id="list5" class="phrase-list">
+            <div class="background-box"></div>
+            <span>Frase 5A</span><br>
+            <span>Frase 5B</span><br>
+            <span>Frase 5C</span><br>
+            <span>Frase 5D</span>
         </div>
+
+        <!-- Círculo y marcador -->
+        <div class="circle-container">
+            <canvas id="rouletteCanvas" width="300" height="300"></canvas>
+            <div class="marker"></div>
+        </div>
+
+        <!-- Botón "Jugar" -->
+        <button class="play-button" id="playButton" onclick="startGame()">Jugar</button>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

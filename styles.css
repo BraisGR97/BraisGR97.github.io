@@ -1,90 +1,131 @@
 body {
     margin: 0;
+    padding: 0;
     font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-    background-color: black;
-    overflow: hidden;
-}
-
-.background-image {
-    position: relative;
-    background-size: contain; /* Ajusta el tamaño de la imagen de fondo para que se ajuste dentro del contenedor */
-    background-position: center; /* Centra la imagen dentro del contenedor */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    width: 80vw; /* Ancho del contenedor de la imagen de fondo */
-    height: 80vh; /* Altura del contenedor de la imagen de fondo */
+    background: linear-gradient(to bottom, black, #FF00FF);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: auto;
-    transition: background-image 0.3s ease-in-out;
+    justify-content: flex-start;
+    height: 100vh;
 }
 
-.header {
-    position: absolute;
-    top: 20px;
-    z-index: 10;
+.content {
     text-align: center;
 }
 
-.comic-title {
-    font-size: 50px; /* Tamaño de fuente reducido */
+.title {
     color: white;
-    margin: 0;
+    font-size: 4em;
+    margin: 1px 0 0 0;
+    -webkit-text-stroke: 1.5px black;
 }
 
-.comic-subtitle {
-    font-size: 28px; /* Tamaño de fuente reducido */
-    color: fuchsia;
-    margin: 0;
+.subtitle {
+    color: #FF00FF;
+    font-size: 2.5em;
+    margin: 1px 0 20px 0;
+    -webkit-text-stroke: 1px white;
 }
 
 .button-container {
-    margin-top: 15px; /* Ajusta el margen superior de los botones */
     display: flex;
     justify-content: center;
-    gap: 10px; /* Ajusta el espacio entre los botones si es necesario */
-    z-index: 10;
+    gap: 5px;
+    margin-top: 45px;
 }
 
-.square-button {
-    width: 50px;
-    height: 70px;
-    background-color: rgba(255, 255, 255, 0); /* Color de fondo de los botones no seleccionados */
-    color: black; /* Color del texto de los botones no seleccionados */
+.number-button {
+    background-color: #FF00FF;
+    color: white;
+    font-size: 1.125em;
     border: none;
-    border-radius: 10px;
-    font-size: 22px; /* Tamaño de fuente reducido */
+    border-radius: 5px;
+    padding: 15px 7.5px;
     cursor: pointer;
-    outline: none;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s;
 }
 
-/* Estilo para el botón seleccionado */
-.square-button.selected {
-    background-color: rgba(255, 255, 255, 0); /* Color de fondo para el botón seleccionado */
-    color: white; /* Color del texto para el botón seleccionado */
+.number-button:hover {
+    background-color: #CC00CC;
 }
 
-.list {
-    display: none; /* Oculta todas las listas por defecto */
+/* Circle Container */
+.circle-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative; /* Para posicionar el mensaje de resultado */
+}
+
+/* Circle with segments */
+.circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 10px solid #FF00FF;
+    position: relative;
+    overflow: hidden;
+    background: conic-gradient(
+        #FF0000 0% 25%,
+        #0000FF 25% 50%,
+        #00FF00 50% 75%,
+        #FFFF00 75% 100%
+    );
+}
+
+/* Marker */
+.marker {
+    width: 15px;
+    height: 15px;
+    background-color: #FF00FF;
+    border-radius: 50%;
     position: absolute;
-    top: 400px; /* Ajusta la posición vertical para bajar la lista */
-    z-index: 10;
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para la lista */
-    border-radius: 10px;
-    padding: 5px; /* Reduce el padding de la lista */
-    width: 150px; /* Ancho reducido de la lista */
-    text-align: center; /* Centra el texto dentro de la lista */
-    font-size: 14px; /* Tamaño de fuente reducido */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -150px);
+    transform-origin: 8px 150px; /* Modificado según tu solicitud */
 }
 
-.list ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* Result message */
+.result-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2em;
+    display: none; /* Ocultar inicialmente */
 }
 
-.list li {
-    margin: 3px 0; /* Reduce el margen entre los elementos de la lista */
+/* Botón "Jugar" */
+.play-button {
+    margin-top: 20px;
+    background-color: white;
+    color: black;
+    font-size: 1.5em;
+    border: 2px solid #FF00FF;
+    border-radius: 5px;
+    padding: 15px 30px;
+    cursor: pointer;
+    -webkit-text-stroke: 0.1px white;
+}
+
+.play-button:hover {
+    background-color: #FF00FF;
+    color: white;
+}
+
+/* Listas de frases */
+.phrase-list {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.phrase-list.active {
+    display: block;
 }
