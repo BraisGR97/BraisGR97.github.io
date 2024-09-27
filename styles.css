@@ -151,7 +151,7 @@ body {
 
 .background-container {
     position: relative;
-    background-image: url('image/4.png'); /* Asegúrate de cambiar la ruta al PNG */
+    background-image: url('1.png'); /* Asegúrate de cambiar la ruta al PNG */
     background-size: cover;
     background-position: top center; /* Fija la imagen a la parte superior */
     padding: 20px;

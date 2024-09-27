@@ -30,10 +30,40 @@ function drawCircle() {
 
 function showList(listNumber) {
     const allLists = document.querySelectorAll('.phrase-list');
+    const backgroundContainer = document.querySelector('.background-container');
+
+    // Ocultar todas las listas
     allLists.forEach(list => list.classList.remove('active'));
 
+    // Mostrar la lista correspondiente al botón seleccionado
     const selectedList = document.getElementById(`list${listNumber}`);
     selectedList.classList.add('active');
+
+    // Cambiar la imagen del contenedor dependiendo del botón seleccionado
+    switch (listNumber) {
+        case 1:
+            backgroundContainer.style.backgroundImage = "url('1.png')";
+            backgroundContainer.style.display = 'block'; // Mostrar la imagen
+            break;
+        case 2:
+            backgroundContainer.style.backgroundImage = "url('2.png')";
+            backgroundContainer.style.display = 'block'; // Mostrar la imagen
+            break;
+        case 3:
+            backgroundContainer.style.backgroundImage = "url('1.png')"; // Imagen del botón 3
+            backgroundContainer.style.display = 'block'; // Mostrar la imagen
+            break;
+        case 4:
+            backgroundContainer.style.backgroundImage = "url('3.png')";
+            backgroundContainer.style.display = 'block'; // Mostrar la imagen
+            break;
+        case 5:
+            backgroundContainer.style.backgroundImage = "url('1.png')";
+            backgroundContainer.style.display = 'block'; // Mostrar la imagen
+            break;
+        default:
+            backgroundContainer.style.display = 'none';  // Ocultar la imagen si no es válido
+    }
 }
 
 function startGame() {
