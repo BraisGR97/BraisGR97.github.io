@@ -175,3 +175,7 @@ body {
     margin-bottom: 20px;
     height: 300px; /* Aumenta el tamaño vertical del contenedor */
 }
+
+img {
+    filter: brightness(100%); /* Asegura que las imágenes se mantengan brillantes */
+}
