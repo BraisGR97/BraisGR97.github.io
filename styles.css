@@ -11,7 +11,13 @@ body {
 }
 
 .content {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Asegura que los elementos hijos se centren horizontalmente */
+    justify-content: center; /* Asegura que los elementos se centren verticalmente si el contenido es menor que la altura */
+    min-height: 100vh; /* Asegura que el contenido llene al menos la pantalla */
+    text-align: center; /* Centra el texto de todos los elementos de texto */
+    background: linear-gradient(to bottom, black, #FF00FF); /* Gradiente solo para el contenido */
 }
 
 .title {
@@ -54,10 +60,17 @@ body {
 
 /* Circle Container */
 .circle-container {
+    position: relative;
+    width: 300px; /* Debe coincidir con el tamaño del canvas */
+    height: 300px; /* Debe coincidir con el tamaño del canvas */
+    border: 10px solid #FF00FF; /* Borde fucsia */
+    border-radius: 50%; /* Hacerlo redondo */
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    position: relative; /* Para posicionar el mensaje de resultado */
+    box-sizing: content-box; /* Asegura que el tamaño del borde no modifique el tamaño del contenedor */
+    margin: auto; /* Esto centrará el canvas horizontalmente */
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Circle with segments */
@@ -102,9 +115,10 @@ body {
 
 /* Botón "Jugar" */
 .play-button {
-    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: white;
     color: black;
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
     font-size: 1.5em;
     border: 2px solid #FF00FF;
     border-radius: 5px;
@@ -115,6 +129,7 @@ body {
 
 .play-button:hover {
     background-color: #FF00FF;
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
     color: white;
 }
 
@@ -124,8 +139,9 @@ body {
     background-color: rgba(255, 255, 255, 0.5);
     padding: 10px;
     border-radius: 15px;
-    margin-top: 10px;
     text-align: center; /* Centrar el texto */
+	width: 370px; /* O el ancho que desees */
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 /* Colores para las frases */
@@ -151,7 +167,6 @@ body {
 
 .background-container {
     position: relative;
-    background-image: url('1.png'); /* Asegúrate de cambiar la ruta al PNG */
     background-size: cover;
     background-position: top center; /* Fija la imagen a la parte superior */
     padding: 20px;
@@ -159,4 +174,12 @@ body {
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
     height: 300px; /* Aumenta el tamaño vertical del contenedor */
+}
+
+html {
+    color-scheme: light; /* Solo permite el modo claro */
+}
+
+img {
+    filter: brightness(100%); /* Asegura que las imágenes se mantengan brillantes */
 }

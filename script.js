@@ -9,6 +9,22 @@ let previousTimestamp; // Timestamp para el control del tiempo
 const canvas = document.getElementById('rouletteCanvas');
 const ctx = canvas.getContext('2d');
 
+// Pre-cargar imágenes
+const imagePaths = ['0.png', '4.png', '2.png', '1.png', '3.png', '5.png'];
+const images = [];
+
+imagePaths.forEach((path, index) => {
+    const img = new Image();
+    img.src = path;
+    images[index] = img;
+});
+
+// Mostrar imagen por defecto al cargar la página
+window.onload = () => {
+    const backgroundContainer = document.querySelector('.background-container');
+    backgroundContainer.style.backgroundImage = "url('0.png')"; // Imagen por defecto al cargar la página
+}
+
 function drawCircle() {
     const radius = 150;
     const centerX = canvas.width / 2;
@@ -42,24 +58,19 @@ function showList(listNumber) {
     // Cambiar la imagen del contenedor dependiendo del botón seleccionado
     switch (listNumber) {
         case 1:
-            backgroundContainer.style.backgroundImage = "url('1.png')";
-            backgroundContainer.style.display = 'block'; // Mostrar la imagen
+            backgroundContainer.style.backgroundImage = "url('4.png')";
             break;
         case 2:
             backgroundContainer.style.backgroundImage = "url('2.png')";
-            backgroundContainer.style.display = 'block'; // Mostrar la imagen
             break;
         case 3:
-            backgroundContainer.style.backgroundImage = "url('1.png')"; // Imagen del botón 3
-            backgroundContainer.style.display = 'block'; // Mostrar la imagen
+            backgroundContainer.style.backgroundImage = "url('1.png')";
             break;
         case 4:
             backgroundContainer.style.backgroundImage = "url('3.png')";
-            backgroundContainer.style.display = 'block'; // Mostrar la imagen
             break;
         case 5:
-            backgroundContainer.style.backgroundImage = "url('1.png')";
-            backgroundContainer.style.display = 'block'; // Mostrar la imagen
+            backgroundContainer.style.backgroundImage = "url('5.png')";
             break;
         default:
             backgroundContainer.style.display = 'none';  // Ocultar la imagen si no es válido
@@ -129,8 +140,36 @@ function maintainSpin(timestamp) {
 
 function stopGame() {
     isSpinning = false; // Marcar como detenido
-    const color = getColorUnderMarker();
-    alert(`Gana el "${color}"`); // Muestra el color ganador
+
+    // Calcular el color inmediatamente antes de detener la animación
+    const color = getColorUnderMarker(); 
+
+    // Detener la rotación justo en la posición final sin permitir movimientos adicionales
+    const marker = document.querySelector('.marker');
+    marker.style.transform = `translate(-50%, -150px) rotate(${currentRotation * 360}deg)`; // Asegurarse que la rotación final se mantiene
+
+    setTimeout(() => {
+        alert(`Gana el "${color}"`); // Mostrar el mensaje con el color ganador
+    }, 100); // Pequeño retardo para asegurarse que el cálculo es correcto
+}
+
+function maintainSpin(timestamp) {
+    const marker = document.querySelector('.marker');
+    const timeElapsed = timestamp - (previousTimestamp || timestamp);
+    previousTimestamp = timestamp;
+
+    // Mantener la rotación a velocidad máxima
+    currentRotation += (maxSpeed) * (timeElapsed / 1000); // Incrementar rotación a velocidad máxima
+    marker.style.transform = `translate(-50%, -150px) rotate(${currentRotation * 360}deg)`; // Actualizar rotación en grados
+
+    // Comprobar si ya ha pasado el tiempo de giro
+    if (spinDuration > 0) {
+        spinDuration -= timeElapsed; // Disminuir el tiempo de giro
+        requestAnimationFrame(maintainSpin);
+    } else {
+        // Detener el juego directamente aquí para evitar cualquier cambio posterior
+        stopGame(); // Llamar a la función para detener el juego
+    }
 }
 
 function getColorUnderMarker() {
@@ -145,6 +184,7 @@ function getColorUnderMarker() {
     if (b > r && b > g) return 'Azul';
     return 'Amarillo'; // Para el color amarillo
 }
+
 
 // Inicializa el círculo al cargar la página
 drawCircle();
