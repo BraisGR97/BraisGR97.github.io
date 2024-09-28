@@ -171,5 +171,10 @@ body {
     border-radius: 15px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
+	width: 360px;
     height: 300px; /* Aumenta el tamaño vertical del contenedor */
+}
+
+html {
+    color-scheme: light; /* Solo permite el modo claro */
 }
