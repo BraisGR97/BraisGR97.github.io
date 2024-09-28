@@ -179,7 +179,3 @@ body {
 html {
     color-scheme: light; /* Solo permite el modo claro */
 }
-
-img {
-    filter: brightness(100%); /* Asegura que las imágenes se mantengan brillantes */
-}
