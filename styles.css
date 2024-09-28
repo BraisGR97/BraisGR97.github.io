@@ -176,6 +176,6 @@ body {
     height: 300px; /* Aumenta el tamaño vertical del contenedor */
 }
 
-html {
-    color-scheme: light; /* Solo permite el modo claro */
+img {
+    filter: brightness(100%); /* Asegura que las imágenes se mantengan brillantes */
 }
