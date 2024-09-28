@@ -116,6 +116,7 @@ body {
 /* Botón "Jugar" */
 .play-button {
     margin-bottom: 20px;
+	margin-top: 20px;
     background-color: white;
     color: black;
 	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
@@ -140,8 +141,9 @@ body {
     padding: 10px;
     border-radius: 15px;
     text-align: center; /* Centrar el texto */
-	width: 300px; /* O el ancho que desees */
+	width: 280px; /* O el ancho que desees */
 	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+	margin-bottom: 20px;
 }
 
 /* Colores para las frases */
@@ -174,8 +176,4 @@ body {
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
     height: 300px; /* Aumenta el tamaño vertical del contenedor */
-}
-
-img {
-    filter: brightness(100%); /* Asegura que las imágenes se mantengan brillantes */
 }
