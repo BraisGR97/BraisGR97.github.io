@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Comic Sans MS', 'Comic Sans', cursive;
-    background: linear-gradient(to bottom, black, #FF00FF);
+    background: linear-gradient(to bottom, black, #FF00FF, black);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,9 +15,7 @@ body {
     flex-direction: column;
     align-items: center; /* Asegura que los elementos hijos se centren horizontalmente */
     justify-content: center; /* Asegura que los elementos se centren verticalmente si el contenido es menor que la altura */
-    min-height: 100vh; /* Asegura que el contenido llene al menos la pantalla */
     text-align: center; /* Centra el texto de todos los elementos de texto */
-    background: linear-gradient(to bottom, black, #FF00FF); /* Gradiente solo para el contenido */
 }
 
 .title {
@@ -93,7 +91,7 @@ body {
 .marker {
     width: 15px;
     height: 15px;
-    background-color: #FF00FF;
+    background-color: #000000;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -138,10 +136,9 @@ body {
 .phrase-list {
     display: none;
     background-color: rgba(255, 255, 255, 0.5);
-    padding: 10px;
     border-radius: 15px;
     text-align: center; /* Centrar el texto */
-	width: 280px; /* O el ancho que desees */
+	width: 350px; /* O el ancho que desees */
 	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
 	margin-bottom: 20px;
 }
@@ -171,7 +168,6 @@ body {
     position: relative;
     background-size: cover;
     background-position: top center; /* Fija la imagen a la parte superior */
-    padding: 20px;
     border-radius: 15px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
