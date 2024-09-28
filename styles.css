@@ -91,7 +91,7 @@ body {
 .marker {
     width: 15px;
     height: 15px;
-    background-color: #000000;
+    background-color: black;
     border-radius: 50%;
     position: absolute;
     top: 50%;
